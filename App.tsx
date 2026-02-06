@@ -1,16 +1,26 @@
+import React, { useEffect } from "react";
+import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import QiGong from "./pages/QiGong";
+import Contact from "./pages/Contact";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-import React from 'react';
-import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import QiGong from './pages/QiGong';
-import Contact from './pages/Contact';
-import Header from './components/Header';
-import Footer from './components/Footer';
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const App: React.FC = () => {
   return (
     <HashRouter>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col selection:bg-brand-text/10">
         <Header />
         <main className="flex-grow">
