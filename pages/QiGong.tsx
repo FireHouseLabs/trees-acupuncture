@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPin, Clock } from "lucide-react";
+import { MapPin, Clock8 } from "lucide-react";
 
 const QiGong: React.FC = () => {
   return (
@@ -33,7 +33,7 @@ const QiGong: React.FC = () => {
 
             <div className="bg-brand-footer/40 p-10 rounded-3xl space-y-6">
               <div className="flex items-start gap-4">
-                <Clock className="mt-1 flex-shrink-0" />
+                <Clock8 className="mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-2xl font-arapey mb-1">Tuesday Morning</h3>
                   <p className="text-xl">8:00am — 9:00am</p>
