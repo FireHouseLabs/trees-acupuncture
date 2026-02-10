@@ -32,11 +32,14 @@ const About: React.FC = () => {
       {/* The Story */}
       <section className="px-6 py-12">
         <div className="max-w-4xl mx-auto space-y-12">
-          <div className="bg-brand-footer/30 p-8 md:p-12 rounded-3xl shadow-sm italic leading-relaxed text-xl">
+          <div className="bg-brand-footer/30 p-8 md:p-12 rounded-3xl shadow-sm italic text-2xl">
             "Trees Acupuncture and Wellness is founded in the memory of Marni’s
-            younger sister Tasha Michelle Rees (14-3-1973 to 6-1-2020). She was
-            the one that inspired and encouraged Marni to continue her studies
-            and follow her passion and life’s path."
+            younger sister{" "}
+            <span className="whitespace-nowrap">
+              Tasha Rees (14&#8209;3&#8209;1973 to 6&#8209;1&#8209;2020)
+            </span>
+            . She was the one that inspired and encouraged Marni to continue her
+            studies and follow her passion and life’s path."
           </div>
 
           <div className="space-y-6 text-xl md:text-2xl leading-relaxed text-brand-text/90">
@@ -48,9 +51,6 @@ const About: React.FC = () => {
               her patients' health and well-being.
             </p>
 
-            <h2 className="text-3xl font-arapey mt-12 mb-6">
-              More about Marni
-            </h2>
             <p>
               Marni discovered Chinese medicine on her own IVF journey after
               having a miscarriage even though the transfer was successful and

@@ -43,7 +43,16 @@ const QiGong: React.FC = () => {
                 <MapPin className="mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-2xl font-arapey mb-1">Location</h3>
-                  <p className="text-xl">Indah Health Studio</p>
+                  <p className="text-xl">
+                    <a
+                      href="https://www.indahhealth.com.au"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:opacity-70"
+                    >
+                      Indah Health Studio
+                    </a>
+                  </p>
                   <p className="opacity-70">49 Kareela Road, Frankston</p>
                 </div>
               </div>
@@ -51,26 +60,17 @@ const QiGong: React.FC = () => {
                 <p className="text-sm uppercase tracking-widest font-bold opacity-60">
                   Status
                 </p>
-                <p className="text-2xl italic">Coming Soon @ Indah</p>
+                <p className="text-2xl italic">Starting 24th February 2026</p>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="pt-12">
-              <img
-                src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&auto=format&fit=crop"
-                alt="Meditation"
-                className="rounded-3xl h-64 w-full object-cover shadow-lg"
-              />
-            </div>
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&auto=format&fit=crop"
-                alt="Yoga/QiGong"
-                className="rounded-3xl h-96 w-full object-cover shadow-lg"
-              />
-            </div>
+          <div>
+            <img
+              src="/images/qigong-lady.jpg"
+              alt="QiGong"
+              className="rounded-3xl h-96 w-full object-cover shadow-lg"
+            />
           </div>
         </div>
       </section>

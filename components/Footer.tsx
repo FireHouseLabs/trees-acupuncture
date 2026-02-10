@@ -7,7 +7,8 @@ const Footer: React.FC = () => {
         <div className="max-w-md text-center md:text-left">
           <p className="text-xl md:text-2xl italic leading-relaxed">
             Trees Acupuncture & Wellness provides a safe and nurturing place for
-            your healing and well-being.
+            your healing and{" "}
+            <span className="whitespace-nowrap">well&#8209;being</span>.
           </p>
         </div>
 
