@@ -36,7 +36,7 @@ const About: React.FC = () => {
             "Trees Acupuncture and Wellness is founded in the memory of Marni’s
             younger sister{" "}
             <span className="whitespace-nowrap">
-              Tasha Rees (14&#8209;3&#8209;1973 to 6&#8209;1&#8209;2020)
+              Tasha Rees (14&#8209;3&#8209;1974 to 6&#8209;1&#8209;2020)
             </span>
             . She was the one that inspired and encouraged Marni to continue her
             studies and follow her passion and life’s path."

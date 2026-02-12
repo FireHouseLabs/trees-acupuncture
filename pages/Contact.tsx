@@ -78,7 +78,7 @@ const Contact: React.FC = () => {
               </div>
               <div className="flex justify-between border-b border-brand-text/5 pb-2">
                 <span>Friday</span>
-                <span>1pm - 6pm</span>
+                <span>9am - 4pm</span>
               </div>
               <div className="flex justify-between">
                 <span>Saturday</span>
