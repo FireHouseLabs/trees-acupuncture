@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import { Mail, Phone, ExternalLink, Calendar } from "lucide-react";
 
 const InstagramIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -13,20 +14,56 @@ const InstagramIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 );
 
 const Contact: React.FC = () => {
+  const [showQiGongModal, setShowQiGongModal] = useState(false);
+
+  const qiGongModal = showQiGongModal &&
+    createPortal(
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6"
+        role="dialog"
+        aria-modal="true"
+        onClick={() => setShowQiGongModal(false)}
+      >
+        <div
+          className="bg-brand-bg rounded-3xl p-10 max-w-sm w-full text-center shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            type="button"
+            className="absolute right-6 top-6 text-brand-text/70 hover:text-brand-text"
+            onClick={() => setShowQiGongModal(false)}
+            aria-label="Close"
+          >
+            ✕
+          </button>
+          <h3 className="text-3xl font-arapey mb-4">Book Frankston Qi Gong</h3>
+          <p className="text-xl opacity-80 mb-2">Message Marni</p>
+          <a
+            href="sms:0411112422"
+            className="text-2xl font-arapey text-brand-text hover:underline"
+          >
+            0411 112 422
+          </a>
+        </div>
+      </div>,
+      document.body,
+    );
+
   return (
     <div className="fade-in bg-brand-bg pb-24">
+      {qiGongModal}
       {/* Booking Hero */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-arapey mb-12 text-center">
           Contact & Booking
         </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {/* Mornington */}
-          <div className="bg-brand-footer p-12 rounded-[40px] flex flex-col justify-between hover:bg-brand-footer/80 transition-colors">
+          <div className="bg-brand-footer p-8 rounded-[40px] flex flex-col justify-between hover:bg-brand-footer/80 transition-colors">
             <div>
-              <h2 className="text-4xl font-arapey mb-4">Mornington</h2>
-              <p className="text-xl mb-8 opacity-70">
+              <h2 className="text-3xl font-arapey mb-3">Mornington</h2>
+              <p className="text-lg mb-6 opacity-70">
                 3 Main Street, Mornington
               </p>
             </div>
@@ -34,30 +71,48 @@ const Contact: React.FC = () => {
               href="https://www.peninsula-acupuncture.com.au"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between p-6 bg-brand-text text-white rounded-2xl transition-all hover:scale-[1.02]"
+              className="group flex items-center justify-between p-5 bg-brand-text text-white rounded-2xl transition-all hover:scale-[1.02]"
             >
-              <span className="text-2xl font-arapey">
-                Book Online via Peninsula Acupuncture
+              <span className="text-lg font-arapey">
+                Book via Peninsula Acupuncture
               </span>
               <ExternalLink
-                size={24}
-                className="group-hover:translate-x-1 transition-transform"
+                size={20}
+                className="group-hover:translate-x-1 transition-transform shrink-0 ml-2"
               />
             </a>
           </div>
 
           {/* Dromana */}
-          <div className="bg-brand-footer p-12 rounded-[40px] border-2 border-dashed border-brand-text/10 flex flex-col justify-between">
+          <div className="bg-brand-footer p-8 rounded-[40px] border-2 border-dashed border-brand-text/10 flex flex-col justify-between">
             <div>
-              <h2 className="text-4xl font-arapey mb-4">Dromana</h2>
-              <p className="text-xl mb-8 opacity-70">
+              <h2 className="text-3xl font-arapey mb-3">Dromana</h2>
+              <p className="text-lg mb-6 opacity-70">
                 Coming soon to Dromana...
               </p>
             </div>
-            <div className="p-6 bg-brand-text/10 text-brand-text/50 rounded-2xl flex items-center justify-between italic">
-              <span className="text-xl">Online booking coming soon</span>
-              <Calendar size={24} />
+            <div className="p-5 bg-brand-text/10 text-brand-text/50 rounded-2xl flex items-center justify-between italic">
+              <span className="text-lg">Online booking coming soon</span>
+              <Calendar size={20} />
             </div>
+          </div>
+
+          {/* Frankston Qi Gong */}
+          <div className="bg-brand-footer p-8 rounded-[40px] flex flex-col justify-between hover:bg-brand-footer/80 transition-colors">
+            <div>
+              <h2 className="text-3xl font-arapey mb-3">Frankston Qi Gong</h2>
+              <p className="text-lg mb-6 opacity-70">
+                49 Kareela Road, Frankston
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setShowQiGongModal(true)}
+              className="group flex items-center justify-between p-5 bg-brand-text text-white rounded-2xl transition-all hover:scale-[1.02]"
+            >
+              <span className="text-lg font-arapey">Book</span>
+              <Phone size={20} className="group-hover:scale-110 transition-transform shrink-0 ml-2" />
+            </button>
           </div>
         </div>
 

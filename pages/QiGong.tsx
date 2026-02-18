@@ -1,5 +1,6 @@
 import React from "react";
-import { MapPin, Clock8 } from "lucide-react";
+import { MapPin, Clock8, ArrowRight, DollarSign } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const QiGong: React.FC = () => {
   return (
@@ -56,11 +57,26 @@ const QiGong: React.FC = () => {
                   <p className="opacity-70">49 Kareela Road, Frankston</p>
                 </div>
               </div>
+              <div className="flex items-start gap-4">
+                <DollarSign className="mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-2xl font-arapey mb-1">Cost</h3>
+                  <p className="text-xl">$20 per class</p>
+                </div>
+              </div>
               <div className="pt-6">
                 <p className="text-sm uppercase tracking-widest font-bold opacity-60">
                   Status
                 </p>
                 <p className="text-2xl italic">Starting 24th February 2026</p>
+              </div>
+              <div className="pt-2">
+                <Link
+                  to="/contact"
+                  className="px-8 py-3 bg-brand-text text-white rounded-full transition-transform hover:scale-105 inline-flex items-center gap-2"
+                >
+                  Book Qi Gong <ArrowRight size={20} />
+                </Link>
               </div>
             </div>
           </div>
