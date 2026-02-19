@@ -1,8 +1,111 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { MapPin, Clock8, ArrowRight, DollarSign } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const QiGong: React.FC = () => {
+  const qigongInfo = [
+    {
+      title: "Classic Medicine",
+      img: "/images/qigong-001.jpg",
+      description:
+        "Qi Gong is one of the branches of Classical Oriental Medicine like that of acupuncture and herbal medicine.",
+    },
+    {
+      title: "Gentle Movement",
+      img: "/images/qigong-002.jpg",
+      description:
+        "Qi Gong incorporates breath with forms (gentle movements) in a mindful way.",
+    },
+    {
+      title: "Mind Training",
+      img: "/images/qigong-003.jpg",
+      description:
+        "Qi Gong can be described as 'movement therapy' with 'mind training' and translates to 'energy work or cultivation'.",
+    },
+    {
+      title: "Release blockages",
+      img: "/images/qigong-004.jpg",
+      description:
+        "It helps the body's qi (energy) move freely and releases stagnation or blockages held in the body, easing physical, emotional and mental tension.",
+    },
+    {
+      title: "For anyone",
+      img: "/images/qigong-005.jpg",
+      description:
+        "There are no prerequisites or fitness levels needed for people wishing to participate in Qi Gong to improve their health, well-being and mindfulness.",
+    },
+    {
+      title: "Busy minds",
+      img: "/images/qigong-001.jpg",
+      description:
+        "It is perfect for people with busy minds, the distraction of thoughts and to do lists or those just wanting a gentle practice to improve their well-being.",
+    },
+  ];
+
+  const [activeInfoIndex, setActiveInfoIndex] = useState<number | null>(null);
+  const activeInfo =
+    activeInfoIndex === null ? null : qigongInfo[activeInfoIndex];
+
+  const modal =
+    activeInfo &&
+    createPortal(
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6 py-10"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="qigong-modal-title"
+        onClick={() => setActiveInfoIndex(null)}
+      >
+        <div
+          className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-3xl bg-brand-bg p-8 shadow-2xl"
+          onClick={(event) => event.stopPropagation()}
+        >
+          <button
+            type="button"
+            className="absolute right-6 top-6 text-brand-text/70 hover:text-brand-text"
+            onClick={() => setActiveInfoIndex(null)}
+            aria-label="Close details"
+          >
+            ✕
+          </button>
+          <div className="flex flex-col gap-6">
+            <div className="space-y-2">
+              <p className="text-sm uppercase tracking-[0.3em] text-brand-text/70">
+                Qi Gong
+              </p>
+              <h3
+                id="qigong-modal-title"
+                className="text-3xl md:text-4xl font-arapey"
+              >
+                {activeInfo.title}
+              </h3>
+            </div>
+            <div className="space-y-4 text-base md:text-lg leading-relaxed text-brand-text/90">
+              <p>{activeInfo.description}</p>
+            </div>
+          </div>
+        </div>
+      </div>,
+      document.body,
+    );
+
+  useEffect(() => {
+    if (!activeInfo) {
+      return;
+    }
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setActiveInfoIndex(null);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [activeInfo]);
   return (
     <div className="fade-in">
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
@@ -17,6 +120,37 @@ const QiGong: React.FC = () => {
           <p className="text-2xl md:text-3xl italic opacity-90 tracking-widest uppercase">
             Energy & Vitality
           </p>
+        </div>
+      </section>
+
+      {/* Qi Gong Info Tiles */}
+      <section className="py-16 px-6 bg-brand-footer/50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-arapey text-center mb-12">
+            About Qi Gong
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {qigongInfo.map((info, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className="group relative overflow-hidden rounded-2xl h-80 shadow-md"
+                onClick={() => setActiveInfoIndex(idx)}
+                aria-label={`Learn more about ${info.title}`}
+              >
+                <img
+                  src={info.img}
+                  alt={info.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
+                  <h3 className="text-white text-xl md:text-2xl font-arapey tracking-widest uppercase text-center">
+                    {info.title}
+                  </h3>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -90,6 +224,39 @@ const QiGong: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Qi Gong Info Tiles */}
+      <section className="py-16 px-6 bg-brand-footer/50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-arapey text-center mb-12">
+            About Qi Gong
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {qigongInfo.map((info, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className="group relative overflow-hidden rounded-2xl h-80 shadow-md"
+                onClick={() => setActiveInfoIndex(idx)}
+                aria-label={`Learn more about ${info.title}`}
+              >
+                <img
+                  src={info.img}
+                  alt={info.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
+                  <h3 className="text-white text-xl md:text-2xl font-arapey tracking-widest uppercase text-center">
+                    {info.title}
+                  </h3>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {modal}
     </div>
   );
 };
