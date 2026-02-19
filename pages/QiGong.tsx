@@ -225,37 +225,6 @@ const QiGong: React.FC = () => {
         </div>
       </section>
 
-      {/* Qi Gong Info Tiles */}
-      <section className="py-16 px-6 bg-brand-footer/50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-arapey text-center mb-12">
-            About Qi Gong
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {qigongInfo.map((info, idx) => (
-              <button
-                key={idx}
-                type="button"
-                className="group relative overflow-hidden rounded-2xl h-80 shadow-md"
-                onClick={() => setActiveInfoIndex(idx)}
-                aria-label={`Learn more about ${info.title}`}
-              >
-                <img
-                  src={info.img}
-                  alt={info.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4">
-                  <h3 className="text-white text-xl md:text-2xl font-arapey tracking-widest uppercase text-center">
-                    {info.title}
-                  </h3>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {modal}
     </div>
   );
