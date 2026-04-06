@@ -195,14 +195,14 @@ const QiGong: React.FC = () => {
                 <DollarSign className="mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-2xl font-arapey mb-1">Cost</h3>
-                  <p className="text-xl">$20 per class</p>
+                  <p className="text-xl">$160 for a 10 week term pass</p>
                 </div>
               </div>
               <div className="pt-6">
                 <p className="text-sm uppercase tracking-widest font-bold opacity-60">
                   Status
                 </p>
-                <p className="text-2xl italic">Starting 24th February 2026</p>
+                <p className="text-2xl italic">Term 2: 21st April to 23rd June</p>
               </div>
               <div className="pt-2">
                 <Link
