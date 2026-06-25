@@ -202,7 +202,7 @@ const QiGong: React.FC = () => {
                 <p className="text-sm uppercase tracking-widest font-bold opacity-60">
                   Status
                 </p>
-                <p className="text-2xl italic">Term 2: 21st April to 23rd June</p>
+                <p className="text-2xl italic">Term 3: 14th July to 15th September</p>
               </div>
               <div className="pt-2">
                 <Link

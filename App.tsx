@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import QiGong from "./pages/QiGong";
 import Contact from "./pages/Contact";
+import BookOnline from "./pages/BookOnline";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -29,6 +30,7 @@ const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/qigong" element={<QiGong />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/book" element={<BookOnline />} />
           </Routes>
         </main>
         <Footer />

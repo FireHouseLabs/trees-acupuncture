@@ -168,6 +168,12 @@ const Home: React.FC = () => {
               Book Mornington <ArrowRight size={20} />
             </Link>
             <Link
+              to="/book"
+              className="px-8 py-3 bg-brand-text text-white rounded-full transition-transform hover:scale-105 inline-flex items-center gap-2"
+            >
+              Book Dromana <ArrowRight size={20} />
+            </Link>
+            <Link
               to="/contact"
               className="px-8 py-3 bg-brand-text text-white rounded-full transition-transform hover:scale-105 inline-flex items-center gap-2"
             >

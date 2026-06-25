@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
+import { Link } from "react-router-dom";
 import { Mail, Phone, ExternalLink, Calendar } from "lucide-react";
 
 const InstagramIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -84,17 +85,20 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Dromana */}
-          <div className="bg-brand-footer p-8 rounded-[40px] border-2 border-dashed border-brand-text/10 flex flex-col justify-between">
+          <div className="bg-brand-footer p-8 rounded-[40px] flex flex-col justify-between hover:bg-brand-footer/80 transition-colors">
             <div>
               <h2 className="text-3xl font-arapey mb-3">Dromana</h2>
               <p className="text-lg mb-6 opacity-70">
-                Coming soon to Dromana...
+                Pickings Lane, Dromana
               </p>
             </div>
-            <div className="p-5 bg-brand-text/10 text-brand-text/50 rounded-2xl flex items-center justify-between italic">
-              <span className="text-lg">Online booking coming soon</span>
-              <Calendar size={20} />
-            </div>
+            <Link
+              to="/book"
+              className="group flex items-center justify-between p-5 bg-brand-text text-white rounded-2xl transition-all hover:scale-[1.02]"
+            >
+              <span className="text-lg font-arapey">Book Online</span>
+              <Calendar size={20} className="group-hover:scale-110 transition-transform shrink-0 ml-2" />
+            </Link>
           </div>
 
           {/* Frankston Qi Gong */}
@@ -125,6 +129,10 @@ const Contact: React.FC = () => {
             <div className="space-y-4 text-xl">
               <div className="flex justify-between border-b border-brand-text/5 pb-2">
                 <span>Monday</span>
+                <span>9am - 4pm</span>
+              </div>
+              <div className="flex justify-between border-b border-brand-text/5 pb-2">
+                <span>Tuesday</span>
                 <span>9am - 4pm</span>
               </div>
               <div className="flex justify-between border-b border-brand-text/5 pb-2">
