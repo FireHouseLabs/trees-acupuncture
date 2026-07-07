@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { MapPin, Clock8, ArrowRight, DollarSign } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const QiGong: React.FC = () => {
@@ -167,49 +167,13 @@ const QiGong: React.FC = () => {
             </p>
 
             <div className="bg-brand-footer/40 p-10 rounded-3xl space-y-6">
-              <div className="flex items-start gap-4">
-                <Clock8 className="mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-2xl font-arapey mb-1">Tuesday Morning</h3>
-                  <p className="text-xl">8:00am — 9:00am</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <MapPin className="mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-2xl font-arapey mb-1">Location</h3>
-                  <p className="text-xl">
-                    <a
-                      href="https://www.indahhealth.com.au"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline hover:opacity-70"
-                    >
-                      Indah Health Studio
-                    </a>
-                  </p>
-                  <p className="opacity-70">49 Kareela Road, Frankston</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <DollarSign className="mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-2xl font-arapey mb-1">Cost</h3>
-                  <p className="text-xl">$160 for a 10 week term pass<br />or $20 for a casual class</p>
-                </div>
-              </div>
-              <div className="pt-6">
-                <p className="text-sm uppercase tracking-widest font-bold opacity-60">
-                  Status
-                </p>
-                <p className="text-2xl italic">Term 3: 14th July to 15th September</p>
-              </div>
+              <p className="text-2xl italic">Qi Gong workshop coming soon</p>
               <div className="pt-2">
                 <Link
                   to="/contact"
                   className="px-8 py-3 bg-brand-text text-white rounded-full transition-transform hover:scale-105 inline-flex items-center gap-2"
                 >
-                  Book Qi Gong <ArrowRight size={20} />
+                  Enquire Here <ArrowRight size={20} />
                 </Link>
               </div>
             </div>

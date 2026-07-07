@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
           >
             ✕
           </button>
-          <h3 className="text-3xl font-arapey mb-4">Book Frankston Qi Gong</h3>
+          <h3 className="text-3xl font-arapey mb-4">Enquire About Qi Gong</h3>
           <p className="text-xl opacity-80 mb-2">Message Marni</p>
           <a
             href="sms:0411112422"
@@ -60,6 +60,23 @@ const Contact: React.FC = () => {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          {/* Dromana */}
+          <div className="bg-brand-footer p-8 rounded-[40px] flex flex-col justify-between hover:bg-brand-footer/80 transition-colors">
+            <div>
+              <h2 className="text-3xl font-arapey mb-3">Dromana</h2>
+              <p className="text-lg mb-6 opacity-70">
+                Pickings Lane, Dromana
+              </p>
+            </div>
+            <Link
+              to="/book"
+              className="group flex items-center justify-between p-5 bg-brand-text text-white rounded-2xl transition-all hover:scale-[1.02]"
+            >
+              <span className="text-lg font-arapey">Book Online</span>
+              <Calendar size={20} className="group-hover:scale-110 transition-transform shrink-0 ml-2" />
+            </Link>
+          </div>
+
           {/* Mornington */}
           <div className="bg-brand-footer p-8 rounded-[40px] flex flex-col justify-between hover:bg-brand-footer/80 transition-colors">
             <div>
@@ -84,37 +101,17 @@ const Contact: React.FC = () => {
             </a>
           </div>
 
-          {/* Dromana */}
+          {/* Qi Gong */}
           <div className="bg-brand-footer p-8 rounded-[40px] flex flex-col justify-between hover:bg-brand-footer/80 transition-colors">
             <div>
-              <h2 className="text-3xl font-arapey mb-3">Dromana</h2>
-              <p className="text-lg mb-6 opacity-70">
-                Pickings Lane, Dromana
-              </p>
-            </div>
-            <Link
-              to="/book"
-              className="group flex items-center justify-between p-5 bg-brand-text text-white rounded-2xl transition-all hover:scale-[1.02]"
-            >
-              <span className="text-lg font-arapey">Book Online</span>
-              <Calendar size={20} className="group-hover:scale-110 transition-transform shrink-0 ml-2" />
-            </Link>
-          </div>
-
-          {/* Frankston Qi Gong */}
-          <div className="bg-brand-footer p-8 rounded-[40px] flex flex-col justify-between hover:bg-brand-footer/80 transition-colors">
-            <div>
-              <h2 className="text-3xl font-arapey mb-3">Frankston Qi Gong</h2>
-              <p className="text-lg mb-6 opacity-70">
-                49 Kareela Road, Frankston
-              </p>
+              <h2 className="text-3xl font-arapey mb-3">Qi Gong</h2>
             </div>
             <button
               type="button"
               onClick={() => setShowQiGongModal(true)}
               className="group flex items-center justify-between p-5 bg-brand-text text-white rounded-2xl transition-all hover:scale-[1.02]"
             >
-              <span className="text-lg font-arapey">Book</span>
+              <span className="text-lg font-arapey">Enquire</span>
               <Phone size={20} className="group-hover:scale-110 transition-transform shrink-0 ml-2" />
             </button>
           </div>
@@ -122,30 +119,44 @@ const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Hours */}
-          <div className="bg-brand-footer p-10 rounded-3xl">
-            <h3 className="text-3xl font-arapey mb-8 text-center">
-              Clinic Hours
-            </h3>
-            <div className="space-y-4 text-xl">
-              <div className="flex justify-between border-b border-brand-text/5 pb-2">
-                <span>Monday</span>
-                <span>9am - 4pm</span>
+          <div className="space-y-8">
+            <div className="bg-brand-footer p-10 rounded-3xl">
+              <h3 className="text-3xl font-arapey mb-8 text-center">
+                Dromana Clinic Hours
+              </h3>
+              <div className="space-y-4 text-xl">
+                <div className="flex justify-between border-b border-brand-text/5 pb-2">
+                  <span>Tuesday</span>
+                  <span>9am - 4pm</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Thursday</span>
+                  <span>9am - 4pm</span>
+                </div>
               </div>
-              <div className="flex justify-between border-b border-brand-text/5 pb-2">
-                <span>Tuesday</span>
-                <span>9am - 4pm</span>
-              </div>
-              <div className="flex justify-between border-b border-brand-text/5 pb-2">
-                <span>Wednesday</span>
-                <span>9am - 4pm</span>
-              </div>
-              <div className="flex justify-between border-b border-brand-text/5 pb-2">
-                <span>Friday</span>
-                <span>9am - 4pm</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Saturday</span>
-                <span>8:30am - 3pm</span>
+            </div>
+
+            <div className="bg-brand-footer p-10 rounded-3xl">
+              <h3 className="text-3xl font-arapey mb-8 text-center">
+                Mornington Clinic Hours
+              </h3>
+              <div className="space-y-4 text-xl">
+                <div className="flex justify-between border-b border-brand-text/5 pb-2">
+                  <span>Monday</span>
+                  <span>9am - 4pm</span>
+                </div>
+                <div className="flex justify-between border-b border-brand-text/5 pb-2">
+                  <span>Wednesday</span>
+                  <span>9am - 4pm</span>
+                </div>
+                <div className="flex justify-between border-b border-brand-text/5 pb-2">
+                  <span>Friday</span>
+                  <span>9am - 4pm</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Saturday</span>
+                  <span>8:30am - 4pm</span>
+                </div>
               </div>
             </div>
           </div>
